@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Curriculum Vitae — Eliodoro Mascolo</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+    width: 210mm;
+    min-height: 297mm;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #0f172a;
+    color: white;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .header img {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    border: 3px solid #38bdf8;
+    flex-shrink: 0;
+  }
+  .header-text h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 3px;
+  }
+  .header-text h1 em {
+    font-style: normal;
+    color: #38bdf8;
+  }
+  .header-text .subtitle {
+    font-size: 9.5pt;
+    color: #94a3b8;
+    margin-bottom: 9px;
+  }
+  .header-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    background: rgba(56,189,248,0.12);
+    border: 1px solid rgba(56,189,248,0.3);
+    color: #7dd3fc;
+    font-size: 7pt;
+    padding: 2px 9px;
+    border-radius: 100px;
+  }
+
+  /* ── BODY COLUMNS ── */
+  .body {
+    display: flex;
+    min-height: calc(297mm - 126px);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 36%;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 24px 20px;
+    flex-shrink: 0;
+  }
+  .sb-section { margin-bottom: 20px; }
+  .sb-title {
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(56,189,248,0.2);
+  }
+
+  /* Contact */
+  .contact-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 7.8pt;
+    color: #cbd5e1;
+    align-items: flex-start;
+  }
+  .c-label {
+    color: #64748b;
+    font-size: 7pt;
+    min-width: 48px;
+    padding-top: 1px;
+    font-weight: 600;
+  }
+
+  /* Skills */
+  .skill { margin-bottom: 8px; }
+  .skill-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #cbd5e1;
+    margin-bottom: 3px;
+  }
+  .skill-pct { color: #38bdf8; font-size: 7pt; }
+  .bar {
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+  }
+  .fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    border-radius: 3px;
+  }
+
+  /* Languages */
+  .lang { margin-bottom: 9px; }
+  .lang-name { font-size: 8.5pt; font-weight: 600; color: #e2e8f0; }
+  .lang-lvl  { font-size: 7.5pt; color: #94a3b8; margin-top: 1px; }
+  .lang-note { font-size: 7pt; color: #475569; font-style: italic; margin-top: 2px; }
+
+  /* ── MAIN ── */
+  .main {
+    flex: 1;
+    padding: 24px 26px;
+    background: white;
+  }
+  .section { margin-bottom: 18px; }
+  .sec-title {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #38bdf8;
+  }
+
+  /* Item */
+  .item { margin-bottom: 12px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+  .item-role  { font-size: 9pt; font-weight: 700; color: #0f172a; }
+  .item-date  { font-size: 7.5pt; font-weight: 700; color: #2563eb; white-space: nowrap; margin-left: 8px; }
+  .item-org   { font-size: 8pt; color: #2563eb; font-weight: 500; margin-bottom: 3px; }
+  .item-desc  { font-size: 8pt; color: #475569; line-height: 1.6; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .tag  {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-size: 6.5pt;
+    padding: 1px 7px;
+    border-radius: 100px;
+  }
+
+  /* Thesis compare */
+  .thesis-q {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 8.5pt;
+    color: #0f172a;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 7px;
+  }
+  .ccard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 2px solid #38bdf8;
+    border-radius: 5px;
+    padding: 8px 10px;
+  }
+  .ccard:last-child { border-top-color: #818cf8; }
+  .ccard h4 {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 4px;
+  }
+  .ccard:last-child h4 { color: #6d28d9; }
+  .ccard li {
+    font-size: 7.5pt;
+    color: #475569;
+    padding: 1px 0 1px 10px;
+    position: relative;
+    list-style: none;
+  }
+  .ccard li::before { content: '→'; position: absolute; left: 0; color: #38bdf8; font-size: 7pt; }
+  .ccard:last-child li::before { color: #818cf8; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="pfp.jpeg" alt="Eliodoro Mascolo">
+  <div class="header-text">
+    <h1>Eliodoro <em>Mascolo</em></h1>
+    <p class="subtitle">Docente ITP di TTRG &nbsp;·&nbsp; Laureato in Informatica &nbsp;·&nbsp; Esperto CAD</p>
+    <div class="header-chips">
+      <span class="chip">Università Parthenope</span>
+      <span class="chip">I.T.I. Enrico Medi</span>
+      <span class="chip">AutoCAD &amp; SolidWorks</span>
+      <span class="chip">Inglese C1</span>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="sb-section">
+      <div class="sb-title">Contatti</div>
+      <div class="contact-row">
+        <span class="c-label">Email</span>
+        <span>eliodoromascolo@gmail.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">GitHub</span>
+        <span>github.com/eliodev13</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">CV Web</span>
+        <span>eliodev13.github.io/CV</span>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Competenze Tecniche</div>
+      <div class="skill">
+        <div class="skill-row"><span>Informatica</span><span class="skill-pct">85%</span></div>
+        <div class="bar"><div class="fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>Disegno Tecnico</span><span class="skill-pct">80%</span></div>
+        <div class="bar"><div class="fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>AutoCAD</span><span class="skill-pct">78%</span></div>
+        <div class="bar"><div class="fill" style="width:78%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>SolidWorks</span><span class="skill-pct">72%</span></div>
+        <div class="bar"><div class="fill" style="width:72%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>AI &amp; Machine Learning</span><span class="skill-pct">68%</span></div>
+        <div class="bar"><div class="fill" style="width:68%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>Didattica Tecnica</span><span class="skill-pct">65%</span></div>
+        <div class="bar"><div class="fill" style="width:65%"></div></div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-title">Lingue</div>
+      <div class="lang">
+        <div class="lang-name">Italiano</div>
+        <div class="lang-lvl">Madrelingua</div>
+      </div>
+      <div class="lang">
+        <div class="lang-name">Inglese — C1</div>
+        <div class="lang-lvl">Livello Avanzato</div>
+        <div class="lang-note">Un mese di immersione linguistica in Scozia con corso intensivo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="section">
+      <div class="sec-title">Esperienza Professionale</div>
+      <div class="item">
+        <div class="item-top">
+          <span class="item-role">Docente ITP di TTRG</span>
+          <span class="item-date">2025 → Oggi</span>
+        </div>
+        <div class="item-org">I.T.I. Enrico Medi — San Giorgio a Cremano (NA)</div>
+        <div class="item-desc">
+          Insegnante Tecnico Pratico per la disciplina Tecnologie e Tecniche di Rappresentazione Grafica.
+          Guido gli studenti nel disegno tecnico manuale e assistito da computer, unendo la formazione
+          meccanica con le competenze informatiche acquisite durante la laurea.
+        </div>
+        <div class="tags">
+          <span class="tag">Disegno Tecnico</span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">Didattica</span>
+          <span class="tag">TTRG</span>
+          <span class="tag">Istruzione Tecnica</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Formazione</div>
+      <div class="item">
+        <div class="item-top">
+          <span class="item-role">Laurea Triennale in Informatica</span>
+          <span class="item-date">2025</span>
+        </div>
+        <div class="item-org">Università degli Studi di Napoli Parthenope</div>
+        <div class="item-desc">
+          Percorso in scienze informatiche con approfondimenti in intelligenza artificiale, machine learning,
+          basi di dati e ingegneria del software.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-top">
+          <span class="item-role">Diploma in Meccanica e Meccatronica</span>
+          <span class="item-date">2020</span>
+        </div>
+        <div class="item-org">I.T.I. Renato Elia — Castellammare di Stabia (NA)</div>
+        <div class="item-desc">
+          Istruzione tecnica industriale ad indirizzo meccanico: sistemi meccanici, tecnologia dei materiali,
+          disegno tecnico, termodinamica e progettazione CAD.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Tesi di Laurea</div>
+      <div class="thesis-q">
+        "Confronto tra Reflection Tuning e Knowledge Distillation
+        per il Fine-Tuning di Modelli Linguistici di Grandi Dimensioni"
+      </div>
+      <div class="item-desc">
+        Studio comparativo su due paradigmi avanzati di addestramento per Large Language Models,
+        analizzando efficacia ed efficienza computazionale di ciascun approccio.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
