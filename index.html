@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliodoro Mascolo — Curriculum Vitae</title>
+  <meta name="description" content="Curriculum Vitae di Eliodoro Mascolo — Docente ITP, Laureato in Informatica, Esperto CAD">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">EM</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#experience">Esperienza</a>
+        <a href="#education">Formazione</a>
+        <a href="#skills">Competenze</a>
+        <a href="#thesis">Ricerca</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid">
+      <div class="hero-image-wrap fade-in-up" style="--delay:0.1s">
+        <div class="pfp-ring"></div>
+        <div class="pfp-ring pfp-ring-2"></div>
+        <img src="pfp.jpeg" alt="Eliodoro Mascolo" class="pfp">
+        <div class="available-badge">
+          <span class="dot"></span> Disponibile
+        </div>
+      </div>
+
+      <div class="hero-info">
+        <p class="hero-tag fade-in-up" style="--delay:0.2s">// Curriculum Vitae</p>
+        <h1 class="fade-in-up" style="--delay:0.3s">
+          Eliodoro<br><em>Mascolo</em>
+        </h1>
+        <p class="hero-sub fade-in-up" style="--delay:0.4s">
+          Docente ITP di TTRG &nbsp;·&nbsp; Laureato in Informatica &nbsp;·&nbsp; Esperto CAD
+        </p>
+        <div class="hero-chips fade-in-up" style="--delay:0.5s">
+          <span>Univ. Parthenope</span>
+          <span>I.T.I. Enrico Medi</span>
+          <span>AutoCAD & SolidWorks</span>
+          <span>Inglese C1</span>
+        </div>
+        <div class="hero-cta fade-in-up" style="--delay:0.6s">
+          <a href="#experience" class="btn">Esplora il CV</a>
+          <a href="#thesis" class="btn btn-ghost">Tesi di Laurea</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-down">
+      <span>Scorri</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-inner">
+      <p class="section-label">01 — Esperienza Professionale</p>
+      <h2 class="section-title">Il mio percorso<br><span>lavorativo</span></h2>
+
+      <div class="timeline">
+        <div class="timeline-track"></div>
+
+        <article class="timeline-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div class="tl-meta">
+                <h3>Docente ITP di TTRG</h3>
+                <p class="tl-org">I.T.I. Enrico Medi — San Giorgio a Cremano (NA)</p>
+              </div>
+              <div class="tl-date">2025 → Oggi</div>
+            </div>
+            <p class="tl-desc">
+              Insegnante Tecnico Pratico per la disciplina <strong>Tecnologie e Tecniche di Rappresentazione Grafica (TTRG)</strong>.
+              Guido gli studenti nel disegno tecnico manuale e assistito da computer, unendo la mia formazione in meccanica
+              con le competenze informatiche acquisite durante la laurea.
+            </p>
+            <div class="tl-tags">
+              <span>Disegno Tecnico</span>
+              <span>CAD</span>
+              <span>Didattica</span>
+              <span>TTRG</span>
+              <span>Istruzione Tecnica</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-label">02 — Formazione</p>
+      <h2 class="section-title">Studi &amp;<br><span>Titoli</span></h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-year-bg">2025</div>
+          <div class="edu-top">
+            <div>
+              <div class="edu-badge-small">Laurea Triennale</div>
+              <h3>Informatica</h3>
+            </div>
+          </div>
+          <p class="edu-org">Università degli Studi di Napoli Parthenope</p>
+          <p class="edu-desc">
+            Percorso formativo in scienze informatiche con approfondimenti in intelligenza artificiale,
+            machine learning, basi di dati e ingegneria del software. La tesi sperimentale ha riguardato
+            tecniche avanzate di fine-tuning per Large Language Models.
+          </p>
+          <div class="edu-chip">L-31 · Scienze e Tecnologie Informatiche</div>
+        </div>
+
+        <div class="edu-card reveal" style="--reveal-delay:0.15s">
+          <div class="edu-year-bg">2020</div>
+          <div class="edu-top">
+            <div>
+              <div class="edu-badge-small">Diploma di Stato</div>
+              <h3>Meccanica</h3>
+            </div>
+          </div>
+          <p class="edu-org">I.T.I. Renato Elia — Castellammare di Stabia (NA)</p>
+          <p class="edu-desc">
+            Diploma di istruzione tecnica industriale ad indirizzo meccanico. Formazione su sistemi meccanici,
+            tecnologia dei materiali, disegno tecnico, termodinamica e progettazione CAD. Base solida
+            per la carriera nel settore tecnico-industriale.
+          </p>
+          <div class="edu-chip">Istituto Tecnico Industriale</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <p class="section-label">03 — Competenze</p>
+      <h2 class="section-title">Cosa so<br><span>fare</span></h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <path d="M12 36V12h4l8 16 8-16h4v24h-4V20l-8 16-8-16v16z" fill="#00d4ff"/>
+            </svg>
+          </div>
+          <h3>AutoCAD</h3>
+          <p>Disegno tecnico 2D professionale, layout e quotatura secondo norme ISO/UNI, gestione layer, blocchi e annotazioni per ambito meccanico.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
+            <span>85%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.1s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.4)" stroke-width="1.5"/>
+              <path d="M24 10l12 7v14l-12 7-12-7V17z" fill="rgba(168,85,247,0.3)" stroke="#a855f7" stroke-width="1.5"/>
+              <path d="M24 10v28M12 17l12 7 12-7" stroke="#a855f7" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>SolidWorks</h3>
+          <p>Modellazione 3D parametrica, assemblaggi, simulazioni FEM, creazione di messe in tavola e distinte materiali per la produzione.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
+            <span>80%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.2s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="8" stroke="#00d4ff" stroke-width="1.5"/>
+              <path d="M24 8v4M24 36v4M8 24h4M36 24h4M13 13l3 3M32 32l3 3M35 13l-3 3M16 32l-3 3" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>AI &amp; Machine Learning</h3>
+          <p>Fine-tuning di Large Language Models, Reflection Tuning, Knowledge Distillation, valutazione e benchmarking di modelli generativi.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div>
+            <span>75%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.3s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.4)" stroke-width="1.5"/>
+              <path d="M16 18l-6 6 6 6M32 18l6 6-6 6M26 14l-4 20" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Informatica</h3>
+          <p>Programmazione, basi di dati, reti, sistemi operativi e sviluppo software. Competenze trasversali acquisite nel percorso universitario.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div>
+            <span>78%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.1s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <path d="M10 38V10h28v28H10z" stroke="#00d4ff" stroke-width="1.5"/>
+              <path d="M10 18h28M10 28h28M20 10v28M30 10v28" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Disegno Tecnico</h3>
+          <p>Rappresentazione grafica secondo normative ISO/UNI, lettura e interpretazione di tavole tecniche, quotatura geometrica e tolleranze dimensionali.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div>
+            <span>92%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.2s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.4)" stroke-width="1.5"/>
+              <path d="M14 14h20M14 22h14M14 30h8" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="34" cy="30" r="6" stroke="#a855f7" stroke-width="1.5"/>
+              <path d="M38.2 34.2l3 3" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Didattica Tecnica</h3>
+          <p>Insegnamento ITP, progettazione di lezioni pratiche, valutazione degli studenti, gestione del laboratorio CAD e orientamento tecnico-professionale.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="73"></div></div>
+            <span>73%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" style="--reveal-delay:0.3s">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="4" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="11" stroke="#00d4ff" stroke-width="1.5"/>
+              <path d="M24 13c-3.5 4-5.5 6.5-5.5 11s2 7.5 5.5 11M24 13c3.5 4 5.5 6.5 5.5 11s-2 7.5-5.5 11M13 24h22" stroke="#00d4ff" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M15.5 18.5h17M15.5 29.5h17" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Inglese — C1</h3>
+          <p>Livello avanzato. Un mese di studio e immersione totale in Scozia: corso intensivo e interazione quotidiana con madrelingua, che ha consolidato le competenze comunicative in contesti accademici e professionali.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div>
+            <span>C1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section id="thesis" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-label">04 — Tesi di Laurea</p>
+      <h2 class="section-title">Ricerca &amp;<br><span>Innovazione</span></h2>
+
+      <div class="thesis-quote reveal">
+        <div class="tq-badge">Tesi Sperimentale · Informatica · Università Parthenope</div>
+        <blockquote>
+          "Confronto tra <em>Reflection Tuning</em> e <em>Knowledge Distillation</em>
+          per il Fine-Tuning di Modelli Linguistici di Grandi Dimensioni"
+        </blockquote>
+        <p class="tq-sub">
+          Uno studio comparativo approfondito su due paradigmi avanzati di addestramento per Large Language Models (LLM),
+          analizzando efficacia, efficienza computazionale e qualità dei risultati generati.
+        </p>
+      </div>
+
+      <div class="compare-wrap reveal">
+        <div class="compare-card compare-left">
+          <div class="cc-glow cc-glow-cyan"></div>
+          <h4>Reflection Tuning</h4>
+          <p>Tecnica che abilita il modello ad <strong>auto-valutarsi e auto-correggersi</strong> durante il training. Il modello genera risposte, le critica iterativamente e raffina il proprio ragionamento, sviluppando capacità di riflessione metacognitiva.</p>
+          <ul>
+            <li>Auto-valutazione iterativa delle risposte</li>
+            <li>Miglioramento progressivo del ragionamento</li>
+            <li>Riduzione degli errori logici e fattuali</li>
+            <li>Sviluppo del pensiero critico nel modello</li>
+          </ul>
+        </div>
+
+        <div class="compare-center">
+          <div class="compare-vs">VS</div>
+          <div class="compare-line"></div>
+        </div>
+
+        <div class="compare-card compare-right">
+          <div class="cc-glow cc-glow-purple"></div>
+          <h4>Knowledge Distillation</h4>
+          <p>Trasferimento strutturato della conoscenza da un modello <strong>teacher</strong> grande a uno <strong>student</strong> più compatto. Lo student apprende dalla distribuzione di probabilità del teacher, non solo dalle etichette corrette.</p>
+          <ul>
+            <li>Compressione della conoscenza del teacher</li>
+            <li>Riduzione dei costi computazionali</li>
+            <li>Preservazione delle performance chiave</li>
+            <li>Modelli più leggeri e deployabili</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-avatar">EM</div>
+      <h2 class="footer-name">Eliodoro Mascolo</h2>
+      <p class="footer-role">Docente ITP · Laureato in Informatica · Esperto CAD</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2025 Eliodoro Mascolo — Curriculum Vitae</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
